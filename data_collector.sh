@@ -74,3 +74,7 @@ how_to_use(){
 
 	# Call plotter.sh to generate the graphs
 	./plotter.sh
+
+	# display graphs
+	echo
+	ls -lahrt graphs/
