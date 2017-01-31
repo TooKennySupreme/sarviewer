@@ -62,8 +62,7 @@ else
 	echo "-------------------------------------------"
 	echo ""
 	echo "Note that the number that follows the \"sa\" file specifies the day of the data collected by sar daemon"
-	echo -n "Please select an sa* file from the listed above: "
-	read sa_file
+	read -ep "Please select an sa* file from the listed above: " sa_file
 
 	# Dump data contained in selected sar file
 	dump_sar_info

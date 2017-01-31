@@ -51,10 +51,8 @@ how_to_use(){
 if [ $# -ne 0 ];then
 	how_to_use
 else
-	echo -n "Please specify the number of samples to take-> "
-	read number_of_samples
-	echo -n "Please specify the sample interval (take sample every X seconds)-> "
-	read sample_interval
+	read -ep "Please specify the number of samples to take-> " number_of_samples
+	read -ep "Please specify the sample interval (take sample every X seconds)-> " sample_interval
 
 	# Begin collecting data with sar
 	sar_collectors
