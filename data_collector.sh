@@ -50,13 +50,13 @@ how_to_use(){
 # MAIN
 # ======================
 
-if [ $# -ne 0 ];then
-	how_to_use
-else
 	if [[ "$1" && "$2" ]]; then
 		number_of_samples=$1
 		sample_interval=$2
-	else
+	elif [[ ! "$1" || ! "$2" ]]; then
+		how_to_use
+
+		echo
 		read -ep "Please specify the number of samples to take-> " number_of_samples
 		read -ep "Please specify the sample interval (take sample every X seconds)-> " sample_interval
 	fi
@@ -74,4 +74,3 @@ else
 
 	# Call plotter.sh to generate the graphs
 	./plotter.sh
-fi
