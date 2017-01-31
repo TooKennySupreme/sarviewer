@@ -7,7 +7,7 @@
 # Description   :Script to parse logs from system sar already collected data.
 #                Useful to analyse the overall performance of a server. Note it doesn't collect
 #                data in real time like data_collector.sh. This script just reads the sa* files
-#                on your system (usually located under /var/log/sysstat), parses the info and generates
+#                on your system (usually located under /var/log/sa), parses the info and generates
 #                the graphs calling the script plotter.sh
 # Dependencies  :sysstat,gnuplot
 # Usage         :1)Give executable permissions to script -> chmod +x system_data_reader.sh
@@ -21,7 +21,7 @@
 
 # To display time in 24h format
 export LC_TIME="POSIX"
-sysstat_logdir="/var/log/sysstat"
+sysstat_logdir="/var/log/sa"
 
 # ======================
 # FUNCTIONS
@@ -56,8 +56,8 @@ else
 	echo "Number of sa* files available at this time to retrieve data from:"
 	echo ""
 	echo "-------------------------------------------"
-	for file in $(ls /var/log/sysstat | grep -v sar);do
-		echo "File $file with data from $(sar -r -f /var/log/sysstat/$file | head -1 )";
+	for file in $(ls $sysstat_logdir | grep -v sar);do
+		echo "File $file with data from $(sar -r -f ${sysstat_logdir}/${file} | head -1 )";
 	done
 	echo "-------------------------------------------"
 	echo ""
