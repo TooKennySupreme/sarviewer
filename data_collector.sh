@@ -42,6 +42,8 @@ sar_collectors(){
 
 how_to_use(){
 	echo "This script works without parameters. Just give execution permissions and launch with -> ./data_collector.sh"
+	echo "or unattended where XX = number of samples YY = time interval in seconds"
+	echo "./data_collector.sh XX YY"
 }
 
 # ======================
@@ -51,8 +53,13 @@ how_to_use(){
 if [ $# -ne 0 ];then
 	how_to_use
 else
-	read -ep "Please specify the number of samples to take-> " number_of_samples
-	read -ep "Please specify the sample interval (take sample every X seconds)-> " sample_interval
+	if [[ "$1" && "$2" ]]; then
+		number_of_samples=$1
+		sample_interval=$2
+	else
+		read -ep "Please specify the number of samples to take-> " number_of_samples
+		read -ep "Please specify the sample interval (take sample every X seconds)-> " sample_interval
+	fi
 
 	# Begin collecting data with sar
 	sar_collectors
