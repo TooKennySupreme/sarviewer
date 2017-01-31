@@ -29,17 +29,17 @@ sysstat_logdir="/var/log/sa"
 
 dump_sar_info(){
 	# CPU
-	sar -u -f $sysstat_logdir/sar${sa_file} | grep -v -E "CPU|Average|^$" > data/cpu.dat &
+	sar -u -f $sysstat_logdir/$sa_file | grep -v -E "CPU|Average|^$" > data/cpu.dat &
 	# RAM
-	sar -r -f $sysstat_logdir/sar${sa_file} | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
+	sar -r -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/ram.dat &
 	# Swap
-	sar -S -f $sysstat_logdir/sar${sa_file} | grep -v -E "[a-zA-Z]|^$" > data/swap.dat &
+	sar -S -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/swap.dat &
 	# Load average
-	sar -q -f $sysstat_logdir/sar${sa_file} | grep -v -E "[a-zA-Z]|^$" > data/loadaverage.dat &
+	sar -q -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/loadaverage.dat &
 	# IO transfer
-	sar -b -f $sysstat_logdir/sar${sa_file} | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &
+	sar -b -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/iotransfer.dat &
 	# Process/context switches
-	sar -w -f $sysstat_logdir/sar${sa_file} | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
+	sar -w -f $sysstat_logdir/$sa_file | grep -v -E "[a-zA-Z]|^$" > data/proc.dat &
 }
 
 how_to_use(){
