@@ -35,7 +35,7 @@ Useful to retrieve and analyze data during stress tests.
 
 Some samples of graphs generated.
 
-* RAM - 3 possible charts for ram.png, ram2.png and ram3.png
+* RAM - 4 possible charts for ram.png, ram2.png and ram3.png
 
 ![Alt text](/graphs/ram.png?raw=true "RAM usage graph")
 
@@ -46,6 +46,10 @@ ytic 0,1000
 ytic 0,250 with canvas size 640,900
 
 ![Alt text](/graphs/ram3.png?raw=true "RAM usage graph")
+
+ytic 0,250 with canvas size 640,900 & commit memory charted
+
+![Alt text](/graphs/ram4.png?raw=true "RAM usage graph")
 
 * CPU
 
