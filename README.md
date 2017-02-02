@@ -35,7 +35,7 @@ Useful to retrieve and analyze data during stress tests.
 
 Some samples of graphs generated.
 
-* RAM - 4 possible charts for ram.png, ram2.png and ram3.png
+* RAM - 4 possible charts for ram.png, ram2.png, ram3.png and ram4.png
 
 ![Alt text](/graphs/ram.png?raw=true "RAM usage graph")
 
