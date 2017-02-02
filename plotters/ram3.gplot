@@ -13,7 +13,7 @@
 reset
 
 # Terminal config
-set terminal pngcairo enhanced font 'Verdana,8'
+set terminal pngcairo size 640,900 enhanced font 'Verdana,8'
 set output '../graphs/ram3.png'
 set title "RAM usage graph"
 set key bmargin
