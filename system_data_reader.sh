@@ -21,7 +21,11 @@
 
 # To display time in 24h format
 export LC_TIME="POSIX"
-sysstat_logdir="/var/log/sa"
+if [ -f /etc/redhat-release ]; then
+	sysstat_logdir="/var/log/sa"
+elif [ -d /var/log/sysstat ]; then
+	sysstat_logdir="/var/log/sysstat"
+fi
 
 # ======================
 # FUNCTIONS
