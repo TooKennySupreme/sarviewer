@@ -12,14 +12,15 @@
 #
 
 if [ $# -ne 0 ];then
-	echo "This script doesn't accept parameters"
+  echo "This script doesn't accept parameters"
 else
-	cd plotters
-	gnuplot loadaverage.gplot
-	gnuplot cpu.gplot
-	gnuplot ram.gplot
-	gnuplot swap.gplot
-	gnuplot iotransfer.gplot
-	gnuplot proc.gplot
-	gnuplot contextsw.gplot
+  cd plotters
+  gnuplot loadaverage.gplot
+  gnuplot cpu.gplot
+  gnuplot ram.gplot
+  gnuplot ram2.gplot
+  gnuplot swap.gplot
+  gnuplot iotransfer.gplot
+  gnuplot proc.gplot
+  gnuplot contextsw.gplot
 fi
