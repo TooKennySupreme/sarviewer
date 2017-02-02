@@ -36,6 +36,14 @@ Some samples of graphs generated.
 
 ![Alt text](/graphs/ram.png?raw=true "RAM usage graph")
 
+ytic 0,1000
+
+![Alt text](/graphs/ram2.png?raw=true "RAM usage graph")
+
+ytic 0,250 with canvas size 640,900
+
+![Alt text](/graphs/ram3.png?raw=true "RAM usage graph")
+
 * CPU
 
 ![Alt text](/graphs/cpu.png?raw=true "CPU usage graph")
