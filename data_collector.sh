@@ -26,6 +26,11 @@ if [ -f /etc/redhat-release ]; then
 elif [ -d /var/log/sysstat ]; then
 	sysstat_logdir="/var/log/sysstat"
 fi
+if [ -f /proc/user_beancounters ]; then
+	network_interface="venet0"
+else
+	network_interface="eth0"
+fi
 
 # ======================
 # FUNCTIONS
