@@ -1,12 +1,12 @@
 #!/usr/bin/gnuplot
 #
-# Script        :iotransfer.gplot
+# Script        :swap.gplot
 # Author        :Julio Sanz
 # Website       :www.elarraydejota.com
 # Email         :juliojosesb@gmail.com
-# Description   :Script to create a IO transfer (blocks written/read per second) graph
+# Description   :Script to create a SWAP usage graph with gnuplot
 # Dependencies  :gnuplot
-# Usage         :gnuplot iotransfer.gplot
+# Usage         :gnuplot swap.gplot
 # License       :GPLv3
 #
 
@@ -14,11 +14,11 @@ reset
 
 # Terminal config
 set terminal pngcairo enhanced font 'Verdana,8'
-set output '../graphs/iotransfer.png'
-set title "IO Transfer"
+set output '../../graphs/swap.png'
+set title "SWAP usage graph"
 set key bmargin
 
-# Line style
+# Lines
 set style line 1 lc rgb '#e74c3c' pt 1 ps 1 lt 1 lw 2 # line1
 set style line 2 lc rgb '#3498db' pt 6 ps 1 lt 1 lw 2 # line2
 
@@ -30,12 +30,12 @@ set autoscale xy
 set xdata time
 set timefmt "%H:%M:%S"
 set xlabel "Time"
-set ylabel "Blocks per second"
+set ylabel "SWAP (MB)"
 
 # Background grid
 set style line 11 lc rgb '#aeb6bf' lt 0 lw 2
 set grid back ls 11
 
 # Begin plotting
-plot '../data/iotransfer.dat' using 1:5 title 'Blocks read per second' with l ls 1, \
-     ''                       using 1:6 title 'Blocks written per second' with l ls 2, \
+plot '../../data/swap.dat' using 1:($2/1024) title 'Free' with l ls 1, \
+     ''                    using 1:($3/1024) title 'Used' with l ls 2, \
