@@ -22,9 +22,9 @@ elif [ "$graph_generator" == "gnuplot" ];then
 	gnuplot tasks.gplot
 	gnuplot cpu.gplot
 	gnuplot ram.gplot
-        gnuplot ram2.gplot
-        gnuplot ram3.gplot
-        gnuplot ram4.gplot
+  gnuplot ram2.gplot
+  gnuplot ram3.gplot
+  gnuplot ram4.gplot
 	gnuplot swap.gplot
 	gnuplot iotransfer.gplot
 	gnuplot proc.gplot
