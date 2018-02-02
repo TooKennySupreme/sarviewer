@@ -29,7 +29,11 @@ fi
 if [ -f /proc/user_beancounters ]; then
 	network_interface="venet0"
 else
-	network_interface="eth0"
+	if [ -d /sys/class/net/enp1s0 ]; then
+		network_interface="enp1s0"
+	else
+		network_interface="eth0"
+	fi
 fi
 
 # ======================
